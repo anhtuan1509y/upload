@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Image</th>
+        <th><a href="/add">add</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%ds.forEach(element => {%>
+      <tr id="<%=element.id%>">
+        <td><%=element.name%></td>
+        <td><img src="<%=element.img%>" alt="anh.<%=element.id%>"></td>
+        <form action="/delete/<%=element.id%>">
+          <td><input type="submit" value="delete" onclick="hide('<%=element.id%>')"></td>  
+        </form>
+        <form action="/update/<%=element.id%>" enctype="multipart/form-data">
+          <td><input type="submit" value="update"></td>  
+        </form>
+      </tr>
+      <%});%>
+    </tbody>
+  </table>
+</div>
+</body>
+<script>
+  function hide(id){
+    
+    var x = document.getElementById(id);
+    x.style.display = 'none';
+    console.log("chay r")
+  }
+</script>
+</html>
