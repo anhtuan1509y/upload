@@ -8,9 +8,9 @@ var bodyParser = require('body-parser')
 /* GET home page. */
 
 var config = {
-  user: 'postgres',
-  database: 'upload',
-  password: '123',
+  user: 'ec2-23-23-173-30.compute-1.amazonaws.com',
+  database: 'd2jbqsatcqvrkq',
+  password: 'a18b40f17e5d52d44d804d3838f6a2701d5c498177d5dbcaf43128d379db18f0',
   host: 'localhost',
   port: 5432,
   max: 10,
