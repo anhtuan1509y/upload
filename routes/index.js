@@ -36,7 +36,7 @@ function checkFileUpload(req,file,cd){
 }
 var upload = multer({ storage: storage,fileFilter: checkFileUpload })
 
-router.get('/', upload.single('anhsp'), function(req, res, next) {
+router.get('/', function(req, res, next) {
   pool.connect(function(err,client,done) {
     if(err){
       return console.log('erroe fetching',err);
